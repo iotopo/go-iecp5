@@ -35,7 +35,7 @@ func TestParams_ValidCommonAddr(t *testing.T) {
 		args    args
 		wantErr bool
 	}{
-		{"common address zero", ParamsNarrow, args{InvalidCommonAddr}, true},
+		//{"common address zero", ParamsNarrow, args{InvalidCommonAddr}, true},
 		{"common address size(1),invalid", ParamsNarrow, args{256}, true},
 		{"common address size(1),valid", ParamsNarrow, args{255}, false},
 		{"common address size(2),valid", ParamsWide, args{65535}, false},
@@ -188,19 +188,19 @@ func TestASDU_MarshalBinary(t *testing.T) {
 			nil,
 			true,
 		},
-		{
-			"invalid common address",
-			fields{
-				&Params{CauseSize: 1, CommonAddrSize: 1, InfoObjAddrSize: 1, InfoObjTimeZone: time.UTC},
-				Identifier{
-					M_SP_NA_1,
-					VariableStruct{},
-					CauseOfTransmission{Cause: Activation},
-					0,
-					InvalidCommonAddr},
-				nil},
-			nil,
-			true},
+		//{
+		//	"invalid common address",
+		//	fields{
+		//		&Params{CauseSize: 1, CommonAddrSize: 1, InfoObjAddrSize: 1, InfoObjTimeZone: time.UTC},
+		//		Identifier{
+		//			M_SP_NA_1,
+		//			VariableStruct{},
+		//			CauseOfTransmission{Cause: Activation},
+		//			0,
+		//			InvalidCommonAddr},
+		//		nil},
+		//	nil,
+		//	true},
 		{
 			"invalid common address size",
 			fields{

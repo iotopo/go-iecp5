@@ -71,9 +71,9 @@ func (sf Params) Valid() error {
 
 // ValidCommonAddr returns the validation result of a station common address.
 func (sf Params) ValidCommonAddr(addr CommonAddr) error {
-	if addr == InvalidCommonAddr {
-		return ErrCommonAddrZero
-	}
+	//if addr == InvalidCommonAddr {
+	//	return ErrCommonAddrZero
+	//}
 	if bits.Len(uint(addr)) > sf.CommonAddrSize*8 {
 		return ErrCommonAddrFit
 	}
@@ -235,8 +235,8 @@ func (sf *ASDU) MarshalBinary() (data []byte, err error) {
 		return nil, ErrParam
 	case sf.CauseSize == 1 && sf.OrigAddr != 0:
 		return nil, ErrOriginAddrFit
-	case sf.CommonAddr == InvalidCommonAddr:
-		return nil, ErrCommonAddrZero
+	//case sf.CommonAddr == InvalidCommonAddr:
+	//	return nil, ErrCommonAddrZero
 	case !(sf.CommonAddrSize == 1 || sf.CommonAddrSize == 2):
 		return nil, ErrParam
 	case sf.CommonAddrSize == 1 && sf.CommonAddr != GlobalCommonAddr && sf.CommonAddr >= 255:

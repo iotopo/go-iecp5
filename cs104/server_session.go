@@ -426,9 +426,9 @@ func (sf *SrvSession) serverHandler(asduPack *asdu.ASDU) error {
 			asduPack.Identifier.Coa.Cause == asdu.Deactivation) {
 			return asduPack.SendReplyMirror(sf, asdu.UnknownCOT)
 		}
-		if asduPack.CommonAddr == asdu.InvalidCommonAddr {
-			return asduPack.SendReplyMirror(sf, asdu.UnknownCA)
-		}
+		//if asduPack.CommonAddr == asdu.InvalidCommonAddr {
+		//	return asduPack.SendReplyMirror(sf, asdu.UnknownCA)
+		//}
 		ioa, qoi := asduPack.GetInterrogationCmd()
 		if ioa != asdu.InfoObjAddrIrrelevant {
 			return asduPack.SendReplyMirror(sf, asdu.UnknownIOA)
