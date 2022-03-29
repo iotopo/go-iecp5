@@ -9,7 +9,7 @@ go:
   - 1.15.x
   - 1.16.x
 
-go_import_path: github.com/thinkgos/TODO_ADD_PACKAGENAME
+go_import_path: github.com/iotopo/TODO_ADD_PACKAGENAME
 
 script:
   - go get -v ./...

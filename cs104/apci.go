@@ -1,4 +1,4 @@
-// Copyright 2020 thinkgos (thinkgo@aliyun.com).  All rights reserved.
+// Copyright 2020 iotopo (thinkgo@aliyun.com).  All rights reserved.
 // Use of this source code is governed by a version 3 of the GNU General
 // Public License, license that can be found in the LICENSE file.
 
@@ -7,7 +7,7 @@ package cs104
 import (
 	"fmt"
 
-	"github.com/thinkgos/go-iecp5/asdu"
+	"github.com/iotopo/go-iecp5/asdu"
 )
 
 const startFrame byte = 0x68 // 启动字符
